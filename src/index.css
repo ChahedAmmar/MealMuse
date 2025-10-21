@@ -1,13 +1,384 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.container {
+  font-family: "Times New Roman";
+  margin: 0 auto;
+  width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navBar {
+  display: flex;
+  
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ADD8E6;
+  padding: 15px 20px;
+}
+
+.navBar h1 {
+  margin: 0;
+  color: #000;
+}
+
+.navLinks {
+  
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: auto;
+  padding: 0;
+  
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.navLinks li a {
+
+  text-decoration: none;
+  color: #000;
+}
+
+main {
+  padding: 20px;
+}
+form{
+  display: inline;
+}
+
+label {
+  font-size: 18px;
+font-weight: bold;
+  margin-right: 20px;
+  font-style: italic;
+  margin-left: 50px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 2px solid #FFA500;
+  border-radius: 5px;
+  width: 400px;
+  font-size: 16px;
+  margin-right: 200px;
+  margin-left: 50px;
+}
+
+.add_btn {
+  padding: 10px 20px;
+  background-color: #FFA500;
+  border: none;
+  width: 150px;
+  height: 40px;
+  font-weight: bold;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 50px;
+  margin-right: 80px;
+}
+
+.toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 15px;
+  padding: 2px;
+  cursor: pointer;
+  margin-left: 10px;
+  position: relative;
+}
+
+.toggle-btn .thumb {
+  width: 26px;
+  height: 26px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.toggle-btn.toggled .thumb {
+  transform: translateX(30px);
+}
+
+.toggle-btn.toggled {
+  background-color: #FFA500;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+input:focus, button:focus {
+  outline: none;
+}
+.ingredientsList{
+  margin-bottom: 20%;
+}
+.recipe-btn {
+  padding: 10px 20px;
+  background-color: #FFB70354;
+  font-weight: bolder;
+  font-style: italic;
+  color: #023047;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  text-align: center;
+  font-family: "Times New Roman";
+  font-size: 40px;
+ 
+  
+  line-height: normal;
+  border-radius: 10px;
+
+  margin-top: auto;
+  
+
+}
+
+.ingredientsList {
+  margin: 30px 50px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ingredientsList h2 {
+  color: #023047;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.ingredientsList ul {
+  list-style-type: none;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ingredientsList li {
+  background-color: #FFB703;
+  color: #023047;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  margin: 30px 50px;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #FFB703;
+}
+
+section h2 {
+  color: #023047;
+  font-size: 28px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #FFB703;
+  padding-bottom: 10px;
+}
+
+section h3 {
+  color: #023047;
+  font-size: 22px;
+  margin: 20px 0 15px;
+}
+
+section p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+section strong {
+  color: #023047;
+  font-size: 18px;
+  display: block;
+  margin: 15px 0 10px;
+}
+
+section ul, section ol {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+section li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+section ul li {
+  list-style-type: disc;
+}
+
+section ol li {
+  list-style-type: decimal;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navLinks {
+    gap: 20px;
+    font-size: 16px;
+  }
+  
+  input[type="text"] {
+    width: 60%;
+    margin-right: 10px;
+    margin-left: 20px;
+  }
+  
+  .add_btn {
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+  
+  label {
+    margin-left: 20px;
+    display: block;
+    margin-top: 15px;
+  }
+  
+  .ingredientsList, section {
+    margin: 20px;
+  }
+  
+  .recipe-btn {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navBar {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .navLinks {
+    margin-top: 15px;
+    gap: 15px;
+  }
+  
+  input[type="text"] {
+    width: 80%;
+    margin-left: 0;
+  }
+  
+  .add_btn {
+    width: 80%;
+    margin-left: 0;
+  }
+  
+  .recipe-btn {
+    font-size: 24px;
+    padding: 8px 15px;
+  }
+}
+.fav-btn{
+  padding: 10px 10px;
+  background-color: #FFA500;
+  font-weight: bolder;
+  font-style: italic;
+  color: #ffff;
+ display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 40px;
+  margin-left: 40%;
+  margin-right: 80px;
+  margin-top: auto;
+  border: none;
+ justify-self: center;
+  text-align: center;
+  font-family: "Times New Roman";
+  font-size: 16px;
+ 
+  
+  line-height: normal;
+  border-radius: 10px;
+cursor: pointer;
+  margin-top: auto;
+}
+.fav-btn:hover {
+  background-color: #FFB70354;
+  color: #023047;
+}
+.planner-btn{
+  padding: 10px 10px;
+  background-color: #FFA500;
+  font-weight: bolder;
+  font-style: italic;
+  color: #ffff;
+ display: inline;
+
+  font-family: "Times New Roman";
+  font-size: 16px;
+  line-height: normal;
+  border-radius: 10px;
+cursor: pointer;
+  margin-top: auto;
+}
+.planner-btn:hover {
+  background-color: #FFB70354;
+  color: #023047;
+}
+.recipe{
+  padding: 10px 10px;
+  background-color: #FFA500;
+  font-weight: bolder;
+  font-style: italic;
+  color: #ffff;
+ display: inline;
+margin-bottom: 10px;
+  font-family: "Times New Roman";
+  font-size: 16px;
+  line-height: normal;
+  border-radius: 10px;
+cursor: pointer;
+  margin-top: auto;
+}
+.Planner-container{
+  display: grid;
+  gap:20px;
+  grid-template-columns: repeat(3, 200px);
+  justify-content: center;
+}
+.day{
+  padding: 20px,10px;
+  height: 200px;
+  border-radius: 10px;
+  background-color: #FFB70354;
+}
+.delt-btn{
+  background-color: #FFA500;
+  font-weight: bolder;
+  color: #ee0a0a;
+  font-family: "Times New Roman";
+  font-size: 16px;
+  line-height: normal;
+  border-radius: 99px;
+  margin-left: 5px;
+cursor: pointer;
+}
+.delt-all{
+  background-color: #ff370065;
+  font-weight: bolder;
+  font-style: italic;
+  color: #ee0a0a;
+  font-family: "Times New Roman";
+  font-size: 16px;
+  line-height: normal;
+  border-radius: 10px;
+  width: 100px;
+  height: 50px;
+  margin-left: 5px;
+cursor: pointer;
 }
