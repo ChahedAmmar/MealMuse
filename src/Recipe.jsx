@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 const SYSTEM_PROMPT = `
 You are an assistant that receives a list of ingredients that a user has and suggests a recipe they could make with some or all of those ingredients. 
 You don't need to use every ingredient they mention in your recipe. 
@@ -16,7 +18,7 @@ export default async function getRecipe(ingredientsArr,props) {
     const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        Authorization: `Bearer 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 `,
+        Authorization: `Bearer ${process.env.REACT_APP_OPENROUTER_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
